@@ -1,197 +1,79 @@
-body {
-  margin: 0;
-  font-family: 'cursive';
-  background: #ffe4ec;
-  overflow: hidden;
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#ffe6ef;
+  text-align:center;
+  overflow-x:hidden;
 }
 
-.slide {
-  display: none;
-  height: 100vh;
-  text-align: center;
-  padding: 40px;
+.slide{
+  display:none;
+  min-height:100vh;
+  padding:60px 20px;
 }
 
-.slide.active {
-  display: block;
+.slide.active{
+  display:block;
+  animation:fade 0.8s ease;
 }
 
-h1 {
-  color: #d63384;
-  font-size: 2.2em;
+h1{
+  color:#ff4f9a;
 }
 
-button {
-  padding: 10px 20px;
-  background: #ff69b4;
-  border: none;
-  color: white;
-  border-radius: 20px;
-  font-size: 16px;
-  margin-top: 20px;
+button{
+  background:#ff5fa2;
+  border:none;
+  color:white;
+  padding:14px 30px;
+  border-radius:30px;
+  font-size:18px;
+  margin-top:20px;
 }
 
-.note {
-  font-size: 18px;
-  margin-top: 20px;
+.cake{
+  font-size:80px;
+  animation:bounce 1s infinite;
 }
 
-.cake {
-  font-size: 80px;
-  margin: 20px;
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  max-width:320px;
+  margin:30px auto;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(4, 60px);
-  gap: 15px;
-  justify-content: center;
+.card{
+  background:#ffb6cf;
+  padding:30px 0;
+  font-size:26px;
+  border-radius:15px;
+  cursor:pointer;
+  transition:transform 0.6s;
 }
 
-.card {
-  width: 60px;
-  height: 60px;
-  background: #ffb6c1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  font-size: 24px;
+.card.flipped{
+  transform:rotateY(180deg);
 }
 
-.letter {
-  background: #fff0f5;
-  padding: 20px;
-  border-radius: 15px;
-  margin: 20px;
+.heart{
+  position:fixed;
+  font-size:24px;
+  animation:float 3s linear;
 }
 
-.heart {
-  position: absolute;
-  font-size: 30px;
-  animation: pop 1.5s ease forwards;
+@keyframes fade{
+  from{opacity:0;}
+  to{opacity:1;}
 }
 
-@keyframes pop {
-  0% { transform: scale(0); opacity: 0; }
-  50% { transform: scale(1.3); opacity: 1; }
-  100% { transform: scale(1); opacity: 0; }
-}
-/* ===============================
-FLIP CARD FIX (CLICK BASED)
-================================ */
-.card {
-  perspective: 1000px;
-  cursor: pointer;
+@keyframes bounce{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-20px);}
 }
 
-.card-inner {
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-.card.flipped .card-inner {
-  transform: rotateY(180deg);
-}
-
-.card-front,
-.card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card-front {
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-  font-size: 26px;
-}
-
-.card-back {
-  background: linear-gradient(135deg, #fff1eb, #ace0f9);
-  transform: rotateY(180deg);
-  padding: 12px;
-  text-align: center;
-  font-size: 14px;
-}
-
-/* ===============================
-HEART BURST + POPUP
-================================ */
-.heart {
-  position: fixed;
-  font-size: 28px;
-  animation: flyUp 2s ease forwards;
-  z-index: 999;
-}
-
-@keyframes flyUp {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-  70% {
-    transform: translateY(-200px) scale(1.4);
-  }
-  100% {
-    transform: translateY(-260px) scale(0);
-    opacity: 0;
-  }
-}
-
-.note-popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #fff0f6;
-  padding: 20px;
-  border-radius: 18px;
-  box-shadow: 0 0 30px rgba(255,105,180,0.4);
-  display: none;
-  z-index: 1000;
-  animation: popIn 0.6s ease;
-}
-
-@keyframes popIn {
-  from {
-    transform: translate(-50%, -60%) scale(0.5);
-    opacity: 0;
-  }
-  to {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
-}
-
-/* ===============================
-FLOATING EMOJIS (WHOLE SITE)
-================================ */
-.floating-emoji {
-  position: fixed;
-  bottom: -40px;
-  font-size: 22px;
-  animation: floatEmoji 6s linear forwards;
-  opacity: 0.8;
-  z-index: 1;
-}
-
-@keyframes floatEmoji {
-  0% {
-    transform: translateY(0);
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-120vh);
-    opacity: 0;
-  }
+@keyframes float{
+  from{bottom:0;opacity:1;}
+  to{bottom:100%;opacity:0;}
 }
