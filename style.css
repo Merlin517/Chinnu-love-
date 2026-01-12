@@ -77,3 +77,121 @@ button {
   50% { transform: scale(1.3); opacity: 1; }
   100% { transform: scale(1); opacity: 0; }
 }
+/* ===============================
+FLIP CARD FIX (CLICK BASED)
+================================ */
+.card {
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-front {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  font-size: 26px;
+}
+
+.card-back {
+  background: linear-gradient(135deg, #fff1eb, #ace0f9);
+  transform: rotateY(180deg);
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ===============================
+HEART BURST + POPUP
+================================ */
+.heart {
+  position: fixed;
+  font-size: 28px;
+  animation: flyUp 2s ease forwards;
+  z-index: 999;
+}
+
+@keyframes flyUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(-200px) scale(1.4);
+  }
+  100% {
+    transform: translateY(-260px) scale(0);
+    opacity: 0;
+  }
+}
+
+.note-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff0f6;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 0 30px rgba(255,105,180,0.4);
+  display: none;
+  z-index: 1000;
+  animation: popIn 0.6s ease;
+}
+
+@keyframes popIn {
+  from {
+    transform: translate(-50%, -60%) scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* ===============================
+FLOATING EMOJIS (WHOLE SITE)
+================================ */
+.floating-emoji {
+  position: fixed;
+  bottom: -40px;
+  font-size: 22px;
+  animation: floatEmoji 6s linear forwards;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+@keyframes floatEmoji {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
