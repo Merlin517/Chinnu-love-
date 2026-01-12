@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Happy Birthday 💖</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Happy Birthday 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<audio id="bgMusic" src="song.mp3" preload="auto"></audio>
+<audio id="bgMusic" src="song.mp3" loop></audio>
 
-<div class="slide active" id="slide1">
-  <h1 id="typeText"></h1>
-  <p class="note">
+<div class="slide active">
+  <h1>Happy Birthday Handsome 💖</h1>
+  <p>
     You make every day brighter ✨<br>
     Today is all about you 🎂<br>
     May your smile never fade 😊<br>
@@ -21,72 +21,66 @@
   <button onclick="nextSlide()">Continue ✨</button>
 </div>
 
-<div class="slide" id="slide2">
-  <h1>Make a Wish 🌠</h1>
-  <p>Close your eyes & wish big 💫</p>
-  <button onclick="nextSlide()">I wished 💖</button>
+<div class="slide">
+  <h1>Make a Wish ✨</h1>
+  <p>Close your eyes and wish something magical 💫</p>
+  <button onclick="nextSlide()">Next 💖</button>
 </div>
 
-<div class="slide" id="slide3">
+<div class="slide">
   <h1>Cut the Cake 🎂</h1>
-  <div class="cake">🎂🕯️</div>
-  <p>Blow the candle & smile 😄</p>
-  <button onclick="nextSlide()">Cake Cut 🎉</button>
+  <div class="cake">🎂</div>
+  <button onclick="nextSlide()">Yay 🎉</button>
 </div>
 
-<div class="slide" id="slide4">
+<div class="slide">
   <h1>Little Notes 💌</h1>
   <div class="cards">
     <div class="card">💖</div>
-    <div class="card">💘</div>
-    <div class="card">💝</div>
-    <div class="card">💕</div>
-    <div class="card">🌸</div>
     <div class="card">✨</div>
     <div class="card">😊</div>
     <div class="card">💫</div>
+    <div class="card">💞</div>
+    <div class="card">🌸</div>
+    <div class="card">😘</div>
+    <div class="card">💝</div>
   </div>
+  <button onclick="nextSlide()">Next 💗</button>
+</div>
+
+<div class="slide">
+  <h1>Heart Bursts 💖</h1>
+  <button onclick="heartBurst()">Feel it 💕</button>
   <button onclick="nextSlide()">Next 💞</button>
 </div>
 
-<div class="slide" id="slide5">
-  <h1>Heart Bursts 💗</h1>
-  <div id="heartArea"></div>
-  <div class="note-popup"></div>
-  <button onclick="burstHeart()">💖 Tap the Heart</button>
-  <button onclick="nextSlide()">Feel it 💓</button>
+<div class="slide">
+  <h1>Funny You 😄</h1>
+  <p>
+    Cute + Crazy = YOU 🤭<br>
+    Smile loading… 99% 😁
+  </p>
+  <button onclick="nextSlide()">Next 💕</button>
 </div>
 
-<div class="slide" id="slide6">
-  <h1>Fun Zone 😜</h1>
-  <p>Too handsome to handle 😏</p>
-  <p>Certified heart stealer 💘</p>
-  <p>Warning: You’re stuck with me forever 😂</p>
-  <button onclick="nextSlide()">Aww 🫶</button>
+<div class="slide">
+  <h1>My Letter 💌</h1>
+  <p>
+    You are special, rare and loved more than you know 💖<br>
+    Stay you. Always.
+  </p>
+  <button onclick="nextSlide()">Almost there 💫</button>
 </div>
 
-<div class="slide" id="slide7">
-  <h1>From Bubus Heart To Dudus  💌</h1>
-  <div class="letter">
-    <p>To the man I want to spend my whole life with ❤️</p>
-    <p>You came into my life unexpectedly ✨ and changed everything 💖</p>
-    <p>I am grateful for you every single day 🌸</p>
-    <p>I love you with all my heart ❤️‍🔥</p>
-  </div>
-  <button onclick="nextSlide()">Almost there 💕</button>
+<div class="slide">
+  <h1>Surprise 🎉</h1>
+  <p>More smiles, more love, more YOU 💕</p>
+  <button onclick="nextSlide()">Finish 💖</button>
 </div>
 
-<div class="slide" id="slide8">
-  <h1>Surprise 🎊</h1>
-  <p>You are my forever person 💍</p>
-  <button onclick="nextSlide()">Last 💫</button>
-</div>
-
-<div class="slide" id="slide9">
-  <h1>Happy Birthday Once Again 💖</h1>
-  <p> Love you so much kannalu 😘</p>
-  <p>This love is forever ♾️</p>
-  
+<div class="slide">
+  <h1>Forever Cute Ending 💞</h1>
+  <p>Happy Birthday once again 🎂💖</p>
 </div>
 
 <script src="script.js"></script>
